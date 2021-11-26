@@ -13,25 +13,27 @@
           "strict": true
         }
       },
-      "root": "",
+      "root": "base-fe-prime-flex-3",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/base-fe",
+            "outputPath": "dist",
+            "baseHref": "/app-context/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "./src/favicon.ico",
+              "./src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./src/assets/scss/default.scss"
             ],
             "scripts": []
           },
@@ -107,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "base-fe"
+  "defaultProject": "base-fe",
+  "cli": {
+    "analytics": false
+  }
 }
