@@ -8,9 +8,8 @@ import { NotAllowedComponent } from './shared/components/not-allowed/not-allowed
 const routes: Routes = [
   {
     path: '',
-    //Keycloak
-    //canActivate: [AuthGuard],
-    //canActivateChild: [AuthGuard],
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     loadChildren: () =>
       import('./dashboard/dashboard.module').then(
         (m) => m.DashboardModule
